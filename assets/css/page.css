@@ -708,7 +708,7 @@ a.link.covid-update {
 .footer-payments-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(64px, auto));
-    column-gap: 0.5rem;
+    gap: 0.5rem;
     justify-content: start;
     padding-bottom: 1rem;
 }
