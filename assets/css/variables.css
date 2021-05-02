@@ -1,0 +1,12 @@
+:root {
+    --header-navigation-height: 60px;
+    --body-background-color: hsl(0, 0%, 97%);
+    --text-color-headline: hsl(0, 0%, 14%);
+    --text-color-body: hsl(0, 0%, 20%);
+    --text-color-subheader: hsl(0, 0%, 40%);
+    --primary-color: hsl(153, 91%, 25%);
+    --second-primary-color: hsl(149, 91%, 21%);
+    --secondary-background-color: hsl(82, 86%, 86%);
+    --border-color: hsl(0, 0%, 89%);
+    --star-rating-full: hsl(55, 100%, 50%);
+}

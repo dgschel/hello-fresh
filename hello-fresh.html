@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="32x32" href="./favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon.ico">
+    <title>HelloFresh: Deutschlands Nummer 1 Kochbox | Leckere Gerichte</title>
+
+    <style>
+        @import url('./assets/css/base.css');
+        @import url('./assets/css/page.css');
+        @import url('./assets/css/variables.css');
+    </style>
+</head>
+
+<body class="body-grid">
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-main">
+                <li class="icon-menu">
+                    <button onclick="toggleSidenav()">
+                        <svg class="icon" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg"
+                            aria-labelledby="hamburger-menu">
+                            <title id="hamburger-menu">Hamburger</title>
+                            <desc id="hamburger-menu">hamburger menu icon</desc>
+                            <path
+                                d="M0 1c0-.552.455-1 .992-1h18.016c.548 0 .992.444.992 1 0 .552-.455 1-.992 1H.992A.993.993 0 0 1 0 1zm0 6.333c0-.552.455-1 .992-1h18.016c.548 0 .992.444.992 1 0 .553-.455 1-.992 1H.992a.993.993 0 0 1-.992-1zm0 6.334c0-.553.455-1 .992-1h18.016c.548 0 .992.444.992 1 0 .552-.455 1-.992 1H.992a.993.993 0 0 1-.992-1z"
+                                class="icon">
+                            </path>
+                        </svg>
+                    </button>
+                </li>
+                <li class="nav-logo">
+                    <a class="nav-logo-link" href="#">
+                        <img class="logo" src="assets/img/hf_logo.png" alt="HelloFresh logo">
+                    </a>
+                </li>
+                <li class="nav-container">
+                    <ul class="nav-links">
+                        <li><a class="link" href="#">Kochboxen</a></li>
+                        <li class="nav-dropdown">
+                            <div class="nav-dropdown-title">
+                                <span>So funktioniert's</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" class="icon arrow-down"
+                                    title="So funktioniert's-arrow-down">
+                                    <path
+                                        d="M17.53 10.07l-5 5a.75.75 0 0 1-1.06 0l-5-5A.75.75 0 1 1 7.53 9L12 13.48 16.47 9a.75.75 0 1 1 1.06 1.06z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <ul class="nav-dropdown-container">
+                                <li><a href="#">So funktioniert's</a></li>
+                                <li><a href="#">Nachhaltigkeit</a></li>
+                                <li><a href="#">Klimaneutralität</a></li>
+                                <li><a href="#">Unsere Lieferanten</a></li>
+                                <li><a href="#">Thermomix</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-dropdown">
+                            <div class="nav-dropdown-title">
+                                <span>Rezepte</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" class="icon arrow-down"
+                                    title="So funktioniert's-arrow-down">
+                                    <path
+                                        d="M17.53 10.07l-5 5a.75.75 0 0 1-1.06 0l-5-5A.75.75 0 1 1 7.53 9L12 13.48 16.47 9a.75.75 0 1 1 1.06 1.06z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <ul class="nav-dropdown-container">
+                                <li><a href="#">Aktuelles Menü</a></li>
+                                <li><a href="#">Kochbuch</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="btn-secondary" href="#">Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="sidenav" class="sidenav">
+            <a class="btn-secondary" href="#">Login</a>
+            <div>
+                <a class="sidenav-link" href="#">
+                    <span class="icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" title="icon paper" color="black">
+                            <path color="black"
+                                d="M18 3.5a.5.5 0 0 1 .5.5v16a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5h12M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-1.25 6a.76.76 0 0 0-.75-.75h-5.5a.75.75 0 0 0 0 1.5H16a.76.76 0 0 0 .75-.75zM8 7.25a.75.75 0 1 0 .75.75.76.76 0 0 0-.75-.75zM16.75 12a.76.76 0 0 0-.75-.75h-5.5a.75.75 0 0 0 0 1.5H16a.76.76 0 0 0 .75-.75zM8 11.25a.75.75 0 1 0 .75.75.76.76 0 0 0-.75-.75zM16.75 16a.76.76 0 0 0-.75-.75h-5.5a.75.75 0 0 0 0 1.5H16a.76.76 0 0 0 .75-.75zM8 15.25a.75.75 0 1 0 .75.75.76.76 0 0 0-.75-.75z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span>Unsere Kochboxen</span>
+                </a>
+                <a class="sidenav-link" href="#">
+                    <span class="icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" title="icon info" color="black">
+                            <path color="black"
+                                d="M12 3.5A8.5 8.5 0 1 1 3.5 12 8.51 8.51 0 0 1 12 3.5M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.75 15v-6a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM12 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span>So funktioniert's</span>
+                </a>
+                <a class="sidenav-link" href="#">
+                    <span class="icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" title="icon paper" color="black">
+                            <path color="black"
+                                d="M18 3.5a.5.5 0 0 1 .5.5v16a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5h12M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-1.25 6a.76.76 0 0 0-.75-.75h-5.5a.75.75 0 0 0 0 1.5H16a.76.76 0 0 0 .75-.75zM8 7.25a.75.75 0 1 0 .75.75.76.76 0 0 0-.75-.75zM16.75 12a.76.76 0 0 0-.75-.75h-5.5a.75.75 0 0 0 0 1.5H16a.76.76 0 0 0 .75-.75zM8 11.25a.75.75 0 1 0 .75.75.76.76 0 0 0-.75-.75zM16.75 16a.76.76 0 0 0-.75-.75h-5.5a.75.75 0 0 0 0 1.5H16a.76.76 0 0 0 .75-.75zM8 15.25a.75.75 0 1 0 .75.75.76.76 0 0 0-.75-.75z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span>Unser Menü</span>
+                </a>
+            </div>
+            <div class="border-top">
+                <a class="sidenav-link" href="#">Hilfebereich</a>
+                <a class="sidenav-link" href="#">Kontakt</a>
+                <a class="sidenav-link" href="#">COVID-19 Updates</a>
+            </div>
+            <div class="border-top">
+                <a class="sidenav-link" href="#">Gutschein</a>
+                <a class="sidenav-link" href="#">Nachhaltigkeit</a>
+            </div>
+            <div class="border-top">
+                <a class="sidenav-link" href="#">Klimaneutralität</a>
+                <a class="sidenav-link" href="#">Unsere Lieferanten</a>
+            </div>
+        </div>
+        <div id="overlay" class="overlay"></div>
+    </header>
+    <main>
+        <section>
+            <div id="homepage-banner" class="homepage-banner">
+                <div class="flex">
+                    <div class="homepage-grid-container">
+                        <h1 class="headline-h1">
+                            <div class="title">Wir sparen Dir</div>
+                            <div class="headline-container">
+                                <div>
+                                    <span id="headline">Zeit</span>
+                                </div>
+                            </div>
+                        </h1>
+                        <div>
+                            <span class="homepage-banner-description">Jetzt mit noch mehr Rezepten jede Woche und ab
+                                3,99 € /
+                                Portion</span>
+                        </div>
+                        <div><a class="btn-primary" href="#">Kochboxen ansehen</a></div>
+                    </div>
+                    <div class="scroll-to-element">
+                        <a href="#how-it-works">
+                            <span class="icon-push-down-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" class="icon-push-down">
+                                    <path
+                                        d="M11.875 17.792a.747.747 0 0 1-.53-.22l-8-8a.75.75 0 0 1 1.06-1.06l7.47 7.47 7.47-7.47a.75.75 0 0 1 1.06 1.06l-8 8a.747.747 0 0 1-.53.22z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="how-it-works" class="how-it-works">
+                <div class="section-1-container">
+                    <h2 class="section-1-h2">So funktioniert's</h2>
+                    <div class="section-1-grid">
+                        <div>Wähle Deine Rezepte</div>
+                        <div>
+                            <span class="bullet-point">•</span>
+                            <span>Grammgenaue Zutaten für weniger Abfall</span>
+                        </div>
+                        <div>
+                            <span class="bullet-point">•</span>
+                            <span>Sicher bis zur Haustür geliefert</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-1-grid-menu">
+                    <div>
+                        <img src="./assets/img/hf_select_menu.jfif" alt="hf select menu">
+                        <h3 class="section-1-h3">Wähle Deine Gerichte</h3>
+                        <p>Auf Deinen Geschmack abgestimmte Rezepte von unseren Kochexperten</p>
+                    </div>
+                    <div>
+                        <img src="./assets/img/hf_configure_menu.jfif" alt="hf configure menu">
+                        <h3 class="section-1-h3">Stelle die perfekte Box zusammen</h3>
+                        <p>Jede Woche leckere Rezepte für jeden Lebensstil und viele Extras</p>
+                    </div>
+                    <div class="section-1-grid-new">
+                        <img src="./assets/img/hf_delivery.jfif" alt="hf delivery">
+                        <span class="new-ribbon">NEU</span>
+                        <h3 class="section-1-h3">Erhalte Deine Lieferung</h3>
+                        <p>Einfache Planung und bequemes Abstellen der Box vor Deiner Haustür</p>
+                    </div>
+                    <div>
+                        <img src="./assets/img/hf_fresh_ingredients.jfif" alt="hf fresh ingredients">
+                        <h3 class="section-1-h3">Koche mit frischen Zutaten der Saison</h3>
+                        <p>Kinderleichte Zubereitung in Deiner eigenen Küche</p>
+                    </div>
+                </div>
+                <div class="section-1-grid-footer">
+                    <a class="btn-secondary" href="#">Mehr erfahren</a>
+                    <p class="subscription-pause">Du kannst jederzeit <strong>eine Lieferpause</strong> einlegen oder
+                        kündigen</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-2-grid-container">
+                <div class="section-2-headline-wrapper">
+                    <h2 class="section-h2">Gut für <strong>Dich</strong>,
+                        <br>den <strong>Planeten</strong>
+                        <br>und deinen <strong>Geldbeutel</strong>
+                    </h2>
+                </div>
+                <div>
+                    <img src="assets/img/hf_good_for_you.png" alt="hf good for you">
+                </div>
+                <div>
+                    <div>
+                        <ul class="section-2-ul">
+                            <li>
+                                <div class="section-2-icon-wrapper">
+                                    <img class="icon-svg" src="./assets/img/cloche-clock.svg" alt="hf clock">
+                                </div>
+                                <div>
+                                    <h3 class="section-2-h3">Zeitersparnis</h3>
+                                    <p>
+                                        Wir liefern Dir alles, was Du für die Zubereitung eines leckeren Abendessens
+                                        brauchst, und sparen Dir Zeit im Supermarkt!
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="section-2-icon-wrapper">
+                                    <img class="icon-svg" src="./assets/img/coin.svg" alt="hf coin">
+                                </div>
+                                <div>
+                                    <h3 class="section-2-h3">Preis-Leistungs-Verhältnis</h3>
+                                    <p>
+                                        Wir bieten eine Vorauswahl an ausgewogenen Rezepten und senden Dir eine Box
+                                        voller
+                                        frischer, hochwertiger Zutaten.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="section-2-icon-wrapper">
+                                    <img class="icon-svg" src="./assets/img/leaf.svg" alt="hf leaf">
+                                </div>
+                                <div>
+                                    <h3 class="section-2-h3">Reduziere Deinen ökologischen Fußabdruck</h3>
+                                    <p>
+                                        HelloFresh investiert für Dich in verschiedene Projekte weltweit, die sich den
+                                        Herausforderungen des Klimawandels stellen und uns helfen, unsere CO₂-Emissionen
+                                        nach internationalen Standards zu kompensieren.
+                                        <a href="#">Mehr erfahren.</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="section-2-cta btn-primary" href="#">Starte jetzt</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-3-grid-container">
+                <div class="section-3-header">
+                    <h2 class="section-3-title">Deine Box, <strong>wie Du sie willst</strong></h2>
+                    <p class="section-3-subtitle">Passende Rezepte für jede Situation, damit Du Deine Kochbox
+                        individuell zusammenstellen kannst
+                    </p>
+                </div>
+                <div class="section-3-menu-wrapper">
+                    <div class="section-3-grid-menu">
+                        <div class="section-3-menu-image section-3-menu-1">
+                            <h3 class="section-3-h3">Für stressige Abende</h3>
+                            <p class="section-3-p">Fertig in 15 Minuten</p>
+                        </div>
+                        <div class="section-3-menu-image section-3-menu-2">
+                            <span class="new-ribbon">NEU</span>
+                            <h3 class="section-3-h3">Für Besuch</h3>
+                            <p class="section-3-p">Flexibel anpassbare Boxgrößen</p>
+                        </div>
+                        <div class="section-3-menu-image section-3-menu-3">
+                            <span class="new-ribbon">NEU</span>
+                            <h3 class="section-3-h3">Für (noch) mehr Genuss</h3>
+                            <p class="section-3-p">Leckere Beilagen zum Teilen</p>
+                        </div>
+                        <div class="section-3-menu-image section-3-menu-4">
+                            <h3 class="section-3-h3">Für besondere Anlässe</h3>
+                            <p class="section-3-p">Ofengerichte zum Schlemmen</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn-primary" href="#">Menü ansehen</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-4-grid-container">
+                <div class="section-4-header">
+                    <h2 class="section-4-title">Unsere Kunden essen besser – jeden Tag</h2>
+                    <p class="section-4-subheader">Hier sind einige Gründe, weshalb wir mit 4.5 von 5 Sternen bewertet
+                        werden!</p>
+                </div>
+                <div class="section-4-content">
+                    <div class="section-4-item">
+                        <div>
+                            <img class="section-4-item-img" src="assets/img/quote.svg" alt="hf quote">
+                            <p class="section-4-testimonial-name">Silke sagt</p>
+                        </div>
+                        <div>
+                            <p>Die gelieferten Produkte sind immer in bestem Zustand, die Rezepte abwechlungsreich und
+                                immer lecker. Und wir haben mal nachgerechnet, daß es mit HelloFresh wesentlich
+                                günstiger ist. Weiter so - Liebe Grüße.</p>
+                        </div>
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="section-4-item">
+                        <div>
+                            <img class="section-4-item-img" src="assets/img/quote.svg" alt="hf quote">
+                            <p class="section-4-testimonial-name">Clara sagt</p>
+                        </div>
+                        <div>
+                            <p>Wir kochen mit Spaß zusammen. Jeden Tag vielfältige Gerichte, die nur 30-40 Minuten
+                                Kochzeit brauchen. Alles ist sehr frisch. Wir sparen nicht nur Zeit, sondern auch Geld,
+                                weil wir weniger einkaufen.</p>
+                        </div>
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-full-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="section-4-item-star-empty-svg">
+                                <path
+                                    d="M12 19.18l-6.678 4.71a.595.595 0 0 1-.904-.285.603.603 0 0 1-.015-.361L6.6 15.04.217 9.74a.6.6 0 0 1 .356-1.063l8.09-.33L11.436.401A.6.6 0 0 1 11.999 0a.595.595 0 0 1 .564.402l2.774 7.943 8.09.331a.596.596 0 0 1 .542.409.604.604 0 0 1-.186.654L17.4 15.04l2.198 8.203a.603.603 0 0 1-.235.648.594.594 0 0 1-.685 0L12 19.18z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-4-footer">
+                    <span>Basierend auf Kundenbewertungen auf</span>
+                    <img src="./assets/img/trustpilot-logo.png" alt="trustpilot">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-5-container-flex">
+                <div class="section-5-container-box-flex">
+                    <div>
+                        <h2 class="section-5-title">Starte jetzt</h2>
+                    </div>
+                    <p class="section-5-subheader">Iss ausgewogen, spare Zeit und hab die perfekte Lösung für einen
+                        entspannten Alltag.</p>
+                    <div>
+                        <a class="btn-primary" href="#">Kochboxen ansehen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid-container">
+                <div>
+                    <ul class="footer-dropdown-grid">
+                        <li class="footer-install-app-wrapper">
+                            <div class="footer-install-app">
+                                <a id="get-the-app" class="btn-secondary" href="#">App herunterladen</a>
+                                <p class="footer-install-app-description">Verwalte Deine Lieferungen von überall,
+                                    jederzeit.</p>
+                                <ul class="footer-install-app-images">
+                                    <li><img src="./assets/img/appstore-badge-de.png" alt="appstore apple"></li>
+                                    <li><img src="./assets/img/playstore-badge-de.png" alt="playstore android"></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="footer-dropdown-grid-item">
+                            <div class="footer-dropdown-title">
+                                <span>HelloFresh</span>
+                                <span class="footer-dropdown-icon">
+                                    <svg class="footer-svg-plus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="plus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path
+                                                d="M13.235 13.235v6.918a1.235 1.235 0 0 1-2.47 0v-6.918H3.847a1.235 1.235 0 1 1 0-2.47h6.918V3.847a1.235 1.235 0 0 1 2.47 0v6.918h6.918a1.235 1.235 0 0 1 0 2.47h-6.918z"
+                                                fill="#067A46"></path>
+                                            <path d="M0 0h24v24H0z"></path>
+                                        </g>
+                                    </svg>
+                                    <svg class="footer-svg-minus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="minus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <polygon fill="#067A46" points="6 11 6 13 18 13 18 11"></polygon>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <ul>
+                                    <li><a href="#">Gutschein</a></li>
+                                    <li><a href="#">Rezepte</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Cookie-Einstellungen</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="footer-dropdown-grid-item">
+                            <div class="footer-dropdown-title">
+                                <span>Unser Unternehmen</span>
+                                <span class="footer-dropdown-icon">
+                                    <svg class="footer-svg-plus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="plus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path
+                                                d="M13.235 13.235v6.918a1.235 1.235 0 0 1-2.47 0v-6.918H3.847a1.235 1.235 0 1 1 0-2.47h6.918V3.847a1.235 1.235 0 0 1 2.47 0v6.918h6.918a1.235 1.235 0 0 1 0 2.47h-6.918z"
+                                                fill="#067A46"></path>
+                                            <path d="M0 0h24v24H0z"></path>
+                                        </g>
+                                    </svg>
+                                    <svg class="footer-svg-minus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="minus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <polygon fill="#067A46" points="6 11 6 13 18 13 18 11"></polygon>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <ul>
+                                    <li><a href="#">HelloFresh Group</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">Presse</a></li>
+                                    <li><a href="#">Neuer Look</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="footer-dropdown-grid-item">
+                            <div class="footer-dropdown-title">
+                                <span>Arbeite mit uns</span>
+                                <span class="footer-dropdown-icon">
+                                    <svg class="footer-svg-plus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="plus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path
+                                                d="M13.235 13.235v6.918a1.235 1.235 0 0 1-2.47 0v-6.918H3.847a1.235 1.235 0 1 1 0-2.47h6.918V3.847a1.235 1.235 0 0 1 2.47 0v6.918h6.918a1.235 1.235 0 0 1 0 2.47h-6.918z"
+                                                fill="#067A46"></path>
+                                            <path d="M0 0h24v24H0z"></path>
+                                        </g>
+                                    </svg>
+                                    <svg class="footer-svg-minus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="minus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <polygon fill="#067A46" points="6 11 6 13 18 13 18 11"></polygon>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <ul>
+                                    <li><a href="#">Blogger/Influencer</a></li>
+                                    <li><a href="#">Affiliates</a></li>
+                                    <li><a href="#">Marketingkooperationen</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="footer-dropdown-grid-item">
+                            <div class="footer-dropdown-title">
+                                <span>Hilfe</span>
+                                <span class="footer-dropdown-icon">
+                                    <svg class="footer-svg-plus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="plus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path
+                                                d="M13.235 13.235v6.918a1.235 1.235 0 0 1-2.47 0v-6.918H3.847a1.235 1.235 0 1 1 0-2.47h6.918V3.847a1.235 1.235 0 0 1 2.47 0v6.918h6.918a1.235 1.235 0 0 1 0 2.47h-6.918z"
+                                                fill="#067A46"></path>
+                                            <path d="M0 0h24v24H0z"></path>
+                                        </g>
+                                    </svg>
+                                    <svg class="footer-svg-minus" width="18" height="18" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="minus-icon">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <polygon fill="#067A46" points="6 11 6 13 18 13 18 11"></polygon>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <ul>
+                                    <li><a href="#">Hilfe-Center</a></li>
+                                    <li><a href="#">Finde eine Antwort</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-payments border-top">
+                    <span class="footer-payments-title">Zahlungsarten</span>
+                    <ul class="footer-payments-grid">
+                        <li><img src="./assets/img/mastercard.webp" alt="mastercard"></li>
+                        <li><img src="./assets/img/visa.webp" alt="visa"></li>
+                        <li><img src="./assets/img/discovernet.webp" alt="discovernet"></li>
+                        <li><img src="./assets/img/americanexpress.webp" alt="americanexpress"></li>
+                        <li><img src="./assets/img/paypal.webp" alt="paypal"></li>
+                        <li><img src="./assets/img/sofort.webp" alt="sofort"></li>
+                        <li><img src="./assets/img/klarna.webp" alt="klarna"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top">
+                <div class="footer-business-grid-container">
+                    <div class="footer-social-media">
+                        <ul class="footer-social-media-grid">
+                            <li>
+                                <svg width="24" height="23.04" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg"
+                                    aria-labelledby="facebook">
+                                    <path
+                                        d="M.504 0A.504.504 0 0 0 0 .503v22.992c0 .278.226.504.504.504h12.232v-8.02h-2.581a.403.403 0 0 1-.404-.403v-3.25c0-.223.18-.404.404-.404h2.582V9.678c0-2.956 1.864-4.867 4.748-4.867l2.569.005c.222 0 .403.18.403.403v3.018c0 .223-.18.404-.404.404h-1.73c-1.192 0-1.41.465-1.41 1.379v1.902h3.02a.404.404 0 0 1 .403.403v3.252c0 .222-.181.403-.405.403h-3.018V24h6.614a.504.504 0 0 0 .504-.503V.503A.503.503 0 0 0 23.527 0H.504z"
+                                        fill="#3b5998" fill-rule="evenodd"></path>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                    aria-labelledby="pinterest">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path fill="#96DC14"
+                                            d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.034-2.868.182-.78 1.173-4.971 1.173-4.971s-.299-.6-.299-1.485c0-1.39.806-2.428 1.81-2.428.853 0 1.265.64 1.265 1.408 0 .858-.547 2.141-.829 3.33-.235.995.5 1.807 1.481 1.807 1.777 0 3.144-1.875 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.33 1.781.744 2.282a.299.299 0 0 1 .07.287c-.077.316-.246.995-.279 1.134-.043.183-.145.222-.334.134-1.25-.582-2.03-2.408-2.03-3.874 0-3.155 2.292-6.052 6.608-6.052 3.468 0 6.164 2.472 6.164 5.776 0 3.446-2.173 6.22-5.189 6.22-1.013 0-1.966-.527-2.292-1.149l-.623 2.377c-.226.87-.835 1.958-1.243 2.622.936.29 1.93.446 2.961.446 5.523 0 10-4.477 10-10S17.523 2 12 2">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg class="fela-1rtnddl" width="26" height="26" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" aria-labelledby="instagram">
+                                    <g fill="#CB3842" fill-rule="evenodd">
+                                        <path
+                                            d="M12 0C8.74 0 8.332.015 7.053.072 5.775.132 4.905.333 4.14.63a5.861 5.861 0 0 0-2.125 1.385A5.83 5.83 0 0 0 .63 4.14c-.297.765-.5 1.635-.558 2.913C.012 8.333 0 8.741 0 12c0 3.26.015 3.668.072 4.947.06 1.278.261 2.15.558 2.913.306.789.717 1.46 1.385 2.125A5.83 5.83 0 0 0 4.14 23.37c.765.297 1.635.5 2.913.558 1.28.06 1.688.072 4.947.072 3.26 0 3.668-.015 4.947-.072 1.278-.06 2.15-.261 2.913-.558a5.861 5.861 0 0 0 2.125-1.385 5.83 5.83 0 0 0 1.385-2.125c.297-.765.5-1.635.558-2.913.06-1.28.072-1.688.072-4.947 0-3.26-.015-3.668-.072-4.947-.06-1.278-.261-2.15-.558-2.913a5.861 5.861 0 0 0-1.385-2.125A5.83 5.83 0 0 0 19.86.63c-.765-.297-1.635-.5-2.913-.558C15.667.012 15.259 0 12 0zm0 2.16c3.204 0 3.585.015 4.85.072 1.17.054 1.804.249 2.227.414.561.218.96.477 1.38.897.42.42.68.819.897 1.38.165.423.36 1.058.414 2.228.057 1.265.07 1.645.07 4.849s-.015 3.585-.075 4.85c-.06 1.17-.255 1.804-.42 2.227a3.81 3.81 0 0 1-.9 1.38c-.42.42-.825.68-1.38.897-.42.165-1.064.36-2.235.414-1.274.057-1.65.07-4.86.07-3.21 0-3.585-.015-4.86-.075-1.17-.06-1.814-.255-2.234-.42-.57-.224-.96-.48-1.38-.9-.42-.42-.69-.825-.9-1.38-.165-.42-.36-1.064-.42-2.235-.046-1.26-.06-1.65-.06-4.845 0-3.194.014-3.585.06-4.86.06-1.17.255-1.814.42-2.235.21-.57.48-.96.9-1.38.42-.42.81-.69 1.38-.9.42-.165 1.05-.36 2.22-.42 1.274-.045 1.65-.06 4.86-.06L12 2.16zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 1 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.845-10.405a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-business-container">
+                        <ul class="footer-business-information">
+                            <li><a class="footer-information-link" href="#">AGB</a></li>
+                            <li><a class="footer-information-link" href="#">Datenschutz</a></li>
+                            <li><a class="footer-information-link" href="#">Impressum</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-business-copyright">&#169; HelloFresh 2021</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/js/page.js"></script>
+    <script src="./assets/js/typewriter.js"></script>
+</body>
+
+</html>

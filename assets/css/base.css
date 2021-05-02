@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;500&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    color: var(--text-color-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.icon {
+    fill: var(--text-color-body);
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
